@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">serviciospublicos</string>
+
+    <!-- string de login -->
+    <string name="login">Iniciar Sesión</string>
+    <string name="idCard">Cédula</string>
+    <string name="password">Contraseña</string>
+    <string name="cancel">Cancelar</string>
+    <string name="confirm">Confirmar</string>
+    <string name="login_register_empty">Faltan datos del formulario</string>
+    <string name="bad_login">Email o contraseña incorrecta</string>
+    <string name="success_login">Bienvenido al sistema de recargas</string>
+    <string name="register_text">No tienes una cuenta aun? Registrate.</string>
+    <string name="pass_min">La clave ingresada no puede tener menos de 8 caracteres.</string>
+    <string name="message_idCard_no_exist">El número de cédula ingresado no se ha registrado.</string>
+    <string name="message_pass_incorrect">La contraseña es incorrecta.</string>
+    <string name="message_no_users">No hay usuarios registrados.</string>
+    <string name="usernotexist">El correo ingresado no ha sido registrado.</string>
+
+    <!-- string de RegisterUser -->
+    <string name="register">Registrar</string>
+    <string name="registernameUser">Nombres</string>
+    <string name="registerSuccesfull">¡¡Registro exitoso!!</string>
+    <string name="messageIdCardMin">El número de cédula debe tener 10 digitos</string>
+    <string name="messageNameMin">Debe escribir el nombre completo</string>
+
+    <!-- string de Deposits -->
+    <string name="depositsTitle">DEPOSITOS</string>
+    <string name="deposit">Depositar</string>
+    <string name="amount">Monto a recargar</string>
+    <string name="confirmamount">Confirma el Monto a recargar</string>
+    <string name="textamount">Se aceptan montos desde $1000 en adelante</string>
+    <string name="amountsnotmatches">Los montos no coinciden</string>
+    <string name="depositSuccesfull">¡¡Depósito exitoso!!</string>
+    <string name="amountmin">Se aceptan montos desde $1000 en adelante.</string>
+
+    <!-- string de pop -->
+    <string name="poptext">Para completar el registro debe realizar un deposito inicial de $1.000</string>
+
+
+
+
+
+
+</resources>
