@@ -28,7 +28,7 @@
     <string name="depositsTitle">DEPOSITOS</string>
     <string name="deposit">Depositar</string>
     <string name="amount">Monto a recargar</string>
-    <string name="confirmamount">Confirma el Monto a recargar</string>
+    <string name="confirmamount">Confirma el Monto</string>
     <string name="textamount">Se aceptan montos desde $1000 en adelante</string>
     <string name="amountsnotmatches">Los montos no coinciden</string>
     <string name="depositSuccesfull">¡¡Depósito exitoso!!</string>
@@ -44,6 +44,21 @@
     <string name="homehour">HORA:   </string>
     <string name="homenameuser">USUARIO: </string>
     <string name="homebalance">SALDO: </string>
+
+    <!-- string de pay -->
+    <string name="payTitle">Seleccione el tipo de factura que va a pagar</string>
+    <string name="cens">CENS</string>
+    <string name="aguask">AGUAS KAPITAL</string>
+    <string name="veolia">VEOLIA</string>
+    <string name="directv">DIRECTV</string>
+    <string name="canalE">CANAL EXITO</string>
+    <string name="numberInvoice">Número de Factura</string>
+    <string name="amountPay">Monto a Pagar</string>
+    <string name="messageNumberInvoiceMin">El número de factura debe tener 10 digitos</string>
+
+    <!-- string de popCancelPayment -->
+    <string name="popCancelPaymenttext">No cuenta con saldo suficiente para realizar el pago</string>
+    <string name="popCancelPaymenttext2">Su saldo actual es de:</string>
 
 
 

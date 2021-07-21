@@ -9,10 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Serviciospublicos">
-        <activity android:name=".HomeActivity"></activity>
+        <activity
+            android:name=".PopCancelPayment"
+            android:theme="@style/AppTheme.TemaPopup"/>
+        <activity android:name=".PaysActivity" />
+        <activity android:name=".HomeActivity" />
         <activity
             android:name=".PopRegisterActivity"
-            android:theme="@style/AppTheme.TemaPopup"></activity>
+            android:theme="@style/AppTheme.TemaPopup" />
         <activity android:name=".DepositsActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".MainActivity">

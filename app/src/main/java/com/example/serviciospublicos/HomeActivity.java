@@ -2,9 +2,11 @@ package com.example.serviciospublicos;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,6 +28,8 @@ public class HomeActivity extends AppCompatActivity {
 
     String currentDateTString;
     String currentHourString;
+    String nameUser;
+    int balance;
 
 
     @Override
@@ -40,13 +44,33 @@ public class HomeActivity extends AppCompatActivity {
         tvBalance = findViewById(R.id.tvHomeBalance);
         tvNameUser = findViewById(R.id.tvHomeNameUser);
 
+
+        //se obtiene la fecha y la hora del sistema
         String currentDateTString= DateFormat.getDateInstance().format(new Date());
         String currentHourString= DateFormat.getTimeInstance().format(new Date());
 
-
         tvHour.setText(" " + currentHourString);
         tvDate.setText(" " + currentDateTString);
+        //metodo para actualizar la hora del sistema
         showDateHour();
+
+        //se obtienen los datos del usuario actual
+        nameUser=GlobalInfo.listUsers.get(GlobalInfo.poss).nameUser;
+        balance=GlobalInfo.listUsers.get(GlobalInfo.poss).balance;
+
+        //aqui se muestran los datos del usuario actual
+        tvNameUser.setText("  " + nameUser);
+        tvBalance.setText("   $ " + Integer.toString(balance));
+
+
+        btnPay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToPays();
+                finish();
+            }
+        });
+
 
     }
 
@@ -72,4 +96,11 @@ public class HomeActivity extends AppCompatActivity {
             }
         },1000);//empezara a ejecutarse después de 1 segundo
     }
+
+    private void goToPays() {
+        Intent intent = new Intent(HomeActivity.this, PaysActivity.class);
+        startActivity(intent);
+    }
+
+
 }
