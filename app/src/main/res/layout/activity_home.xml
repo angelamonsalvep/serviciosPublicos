@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/fondoblanco" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:layout_marginTop="10sp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageViewiconExit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="center"
+            app:srcCompat="@drawable/iconssalida40" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50sp"
+        android:layout_marginBottom="50sp"
+        android:layout_marginRight="20sp"
+        android:layout_marginLeft="20sp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvHomeTitle"
+            android:hint="@string/homeTitle"
+            android:textSize="25sp"
+            android:gravity="center"
+            android:inputType="text" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="20sp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvHomex4"
+                android:hint="@string/homedate"
+                android:textSize="15sp"
+                android:inputType="text" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvHomeDate"
+                android:hint="           "
+                android:textSize="15sp"
+                android:inputType="text" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15sp"
+                android:id="@+id/tvHomex3"
+                android:hint="@string/homehour"
+                android:textSize="15sp"
+                android:inputType="text" />
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvHomeHour"
+                android:hint="         "
+                android:textSize="15sp"
+                android:inputType="text" />
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="10sp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="10sp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvHomex2"
+                android:hint="@string/homenameuser"
+                android:textSize="20sp"
+                android:inputType="text" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvHomeNameUser"
+                android:hint="                  "
+                android:textSize="20sp"
+                android:inputType="text" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="10sp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvhomex"
+                android:hint="@string/homebalance"
+                android:textSize="20sp"
+                android:inputType="text" />
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvHomeBalance"
+                android:hint="            "
+                android:textSize="20sp"
+                android:inputType="text" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="30sp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageViewiconPay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="center"
+                app:srcCompat="@drawable/iconpay" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/home_pay_submit"
+                android:backgroundTint="@color/black"
+                android:text="@string/pay" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="30sp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageViewiconDeposit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="center"
+                app:srcCompat="@drawable/icondeposit2" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/home_deposit_submit"
+                android:backgroundTint="@color/black"
+                android:text="@string/deposit" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</RelativeLayout>

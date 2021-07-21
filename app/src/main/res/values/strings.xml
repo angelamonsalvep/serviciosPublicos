@@ -37,8 +37,13 @@
     <!-- string de pop -->
     <string name="poptext">Para completar el registro debe realizar un deposito inicial de $1.000</string>
 
-
-
+    <!-- string de home -->
+    <string name="homeTitle">MENÚ PRINCIPAL</string>
+    <string name="pay">pagar</string>
+    <string name="homedate">FECHA:   </string>
+    <string name="homehour">HORA:   </string>
+    <string name="homenameuser">USUARIO: </string>
+    <string name="homebalance">SALDO: </string>
 
 
 

@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
                                 if(searchString(data_id_Card)==true) {
                                     if(GlobalInfo.compareStrings(GlobalInfo.listUsers.get(GlobalInfo.poss).passUser, data_password)==true) {
                                         Toast.makeText(MainActivity.this, R.string.success_login, Toast.LENGTH_SHORT).show();
+                                        goTohome();
 
 
 
@@ -105,6 +106,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void goToRegister() {
         Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
+        startActivity(intent);
+    }
+
+    private void goTohome() {
+        Intent intent = new Intent(MainActivity.this, HomeActivity.class);
         startActivity(intent);
     }
 
