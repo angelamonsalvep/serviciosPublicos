@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                                         Toast.makeText(MainActivity.this, R.string.message_pass_incorrect, Toast.LENGTH_SHORT).show();
                                     }
                                 } else {
-                                    Toast.makeText(MainActivity.this, R.string.usernotexist, Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(MainActivity.this, R.string.message_idCard_no_exist, Toast.LENGTH_SHORT).show();
 
                                 }
 
@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
         boolean result;
         int countFound=0;
         while(i<GlobalInfo.listUsers.size()) {
-            result= GlobalInfo.compareStrings(listUsers.get(i).idCardUser,idCardReceive);
+            result= GlobalInfo.compareStrings(GlobalInfo.listUsers.get(i).idCardUser,idCardReceive);
             if(result==true)
             {
                 GlobalInfo.poss=i;
@@ -125,7 +125,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if(countFound==0){
-            Toast.makeText(MainActivity.this, R.string.message_idCard_no_exist, Toast.LENGTH_SHORT).show();
             return false;
         }
 
