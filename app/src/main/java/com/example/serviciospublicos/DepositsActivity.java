@@ -55,6 +55,7 @@ public class DepositsActivity extends AppCompatActivity {
                     if(GlobalInfo.compareStrings(amountStr, confirmAmountStr) == true) {
                         if(amount>=1000) {
                             saveBalance(amount);
+                            GlobalInfo.flagDeposit=true;
                             Toast.makeText(DepositsActivity.this, R.string.depositSuccesfull, Toast.LENGTH_SHORT).show();
                             finish();
                         } else {
@@ -78,7 +79,7 @@ public class DepositsActivity extends AppCompatActivity {
 
     private void saveBalance(int balance)
     {
-        GlobalInfo.userGlobal.balance= balance;
+        GlobalInfo.globalAmountDeposit= balance;
 
     }
 

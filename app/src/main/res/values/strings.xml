@@ -44,6 +44,8 @@
     <string name="homehour">HORA:   </string>
     <string name="homenameuser">USUARIO: </string>
     <string name="homebalance">SALDO: </string>
+    <string name="homenoselectedrb">Debe seleccionar el tipo de factura a pagar </string>
+    <string name="homewithoutbalance">No cuenta con saldo suficiente para realizar pagos, debe realizar un deposito. </string>
 
     <!-- string de pay -->
     <string name="payTitle">Seleccione el tipo de factura que va a pagar</string>
@@ -55,11 +57,20 @@
     <string name="numberInvoice">Número de Factura</string>
     <string name="amountPay">Monto a Pagar</string>
     <string name="messageNumberInvoiceMin">El número de factura debe tener 10 digitos</string>
+    <string name="paynoselectedrb">Debe seleccionar el tipo de factura a pagar </string>
 
     <!-- string de popCancelPayment -->
     <string name="popCancelPaymenttext">No cuenta con saldo suficiente para realizar el pago</string>
     <string name="popCancelPaymenttext2">Su saldo actual es de:</string>
 
+    <!-- string de popDetails -->
+    <string name="popDetailsTitle">DETALLES DEL PAGO</string>
+    <string name="popDetailsTypeinvoice">TIPO DE FACTURA:</string>
+    <string name="popDetailsNumberinvoice">NÚMERO DE FACTURA:</string>
+    <string name="popDetailspaidvalue">VALOR PAGADO:</string>
+    <string name="popDetailsbalance">Su saldo ahora es de:</string>
+    <string name="submittext">ACEPTAR</string>
+    <string name="paySuccesfull">¡¡Pago exitoso!!</string>
 
 
 </resources>

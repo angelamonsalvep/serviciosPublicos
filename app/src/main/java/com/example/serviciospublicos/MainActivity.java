@@ -99,6 +99,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+
+        if(GlobalInfo.flagHome==true) {
+            etIdCard.setText("");
+            etPassword.setText("");
+        }
+
+    }
+
+    @Override
     public void onBackPressed() {
 
 

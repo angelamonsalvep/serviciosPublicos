@@ -8,6 +8,7 @@ import android.os.CountDownTimer;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +22,7 @@ public class HomeActivity extends AppCompatActivity {
 
     TextView tvDate, tvHour, tvNameUser, tvBalance;
     Button btnPay, btnDeposit;
+    ImageView ivIconExit;
 
     private final int TIME = 1000;
 
@@ -37,6 +39,10 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        GlobalInfo.flagDeposit=false;
+
+
+        ivIconExit = findViewById(R.id.ivHomeIconExit);
         tvDate = findViewById(R.id.tvHomeDate);
         tvHour = findViewById(R.id.tvHomeHour);
         btnPay = findViewById(R.id.home_pay_submit);
@@ -66,10 +72,38 @@ public class HomeActivity extends AppCompatActivity {
         btnPay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                goToPays();
+
+                GlobalInfo.flagDeposit=false;
+
+                if(GlobalInfo.listUsers.get(GlobalInfo.poss).balance<1000) {
+                    Toast.makeText(HomeActivity.this, R.string.homewithoutbalance, Toast.LENGTH_SHORT).show();
+                } else {
+                    goToPays();
+                }
+
+            }
+        });
+
+        btnDeposit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToDeposit();
+            }
+        });
+
+        ivIconExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                GlobalInfo.flagHome=true;
                 finish();
             }
         });
+
+
+    }
+
+    @Override
+    public void onBackPressed() {
 
 
     }
@@ -79,6 +113,28 @@ public class HomeActivity extends AppCompatActivity {
         super.onResume();
         showDateHour();
 
+
+        if(GlobalInfo.flagDeposit==true) {
+            addAmounttoBalance();
+        }
+
+        if(GlobalInfo.flagPay==true) {
+            tvBalance.setText("  $ " + Integer.toString(GlobalInfo.listUsers.get(GlobalInfo.poss).balance));
+        }
+
+        if(GlobalInfo.flagPopDetails==true) {
+            tvBalance.setText("  $ " + Integer.toString(GlobalInfo.listUsers.get(GlobalInfo.poss).balance));
+        }
+
+
+    }
+
+    private void addAmounttoBalance() {
+        int currentBalance= GlobalInfo.listUsers.get(GlobalInfo.poss).balance;
+        int amountDeposit= GlobalInfo.globalAmountDeposit;
+        int newBalance= currentBalance+amountDeposit;
+        GlobalInfo.listUsers.get(GlobalInfo.poss).balance=newBalance;
+        tvBalance.setText("  $ " + Integer.toString(GlobalInfo.listUsers.get(GlobalInfo.poss).balance));
     }
 
 
@@ -99,6 +155,11 @@ public class HomeActivity extends AppCompatActivity {
 
     private void goToPays() {
         Intent intent = new Intent(HomeActivity.this, PaysActivity.class);
+        startActivity(intent);
+    }
+
+    private void goToDeposit() {
+        Intent intent = new Intent(HomeActivity.this, DepositsActivity.class);
         startActivity(intent);
     }
 

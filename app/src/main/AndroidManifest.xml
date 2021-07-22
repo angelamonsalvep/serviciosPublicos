@@ -10,8 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Serviciospublicos">
         <activity
-            android:name=".PopCancelPayment"
+            android:name=".PopDetails"
             android:theme="@style/AppTheme.TemaPopup"/>
+        <activity
+            android:name=".PopCancelPayment"
+            android:theme="@style/AppTheme.TemaPopup" />
         <activity android:name=".PaysActivity" />
         <activity android:name=".HomeActivity" />
         <activity

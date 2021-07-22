@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.example.serviciospublicos.models.GlobalInfo;
@@ -19,6 +21,9 @@ public class PaysActivity extends AppCompatActivity {
     String numberInvoice;
     int amount, confirmAmount;
     String amountStr, confirmAmountStr;
+    String typeInvoice;
+    RadioGroup rgTypeInvoice;
+    RadioButton rbCens, rbAguasK, rbVeolia, rbDirectv, rbCanalE;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +45,33 @@ public class PaysActivity extends AppCompatActivity {
                 confirmAmountStr=etConfirmAmount.getText().toString();
 
                 numberInvoice=etNumberInvoice.getText().toString();
+                rgTypeInvoice= findViewById(R.id.rgTypeInvoice);
+                rbCens=findViewById(R.id.rbCens);
+                rbAguasK=findViewById(R.id.rbAguasK);
+                rbVeolia=findViewById(R.id.rbVeolia);
+                rbDirectv=findViewById(R.id.rbDirectv);
+                rbCanalE=findViewById(R.id.rbCanalE);
 
 
+                if (rgTypeInvoice.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(PaysActivity.this, R.string.paynoselectedrb, Toast.LENGTH_SHORT).show();
+                   } else {
+                    if(rbCens.isChecked()) {
+                        typeInvoice=getString(R.string.cens);
+                    }
+                    if (rbAguasK.isChecked()) {
+                        typeInvoice=getString(R.string.aguask);
+                    }
+                    if (rbVeolia.isChecked()) {
+                        typeInvoice=getString(R.string.veolia);
+                    }
+                    if (rbDirectv.isChecked()) {
+                        typeInvoice=getString(R.string.directv);
+                    }
+                    if (rbCanalE.isChecked()) {
+                        typeInvoice=getString(R.string.canalE);
+                    }
+                }
                 if(numberInvoice.isEmpty() || amountStr.isEmpty() || confirmAmountStr.isEmpty()) {
                     Toast.makeText(PaysActivity.this, R.string.login_register_empty, Toast.LENGTH_SHORT).show();
                 } else {
@@ -53,6 +83,13 @@ public class PaysActivity extends AppCompatActivity {
                             if(amount>=1000) {
 
                                 if(validateBalance()==true) {
+                                    setBalanceAfterPay();
+
+                                    savePay();
+                                    Toast.makeText(PaysActivity.this, R.string.paySuccesfull, Toast.LENGTH_SHORT).show();
+                                    goToPopDetails();
+                                    finish();
+
 
                                 } else {
                                     goToPopCancelPayment();
@@ -83,6 +120,13 @@ public class PaysActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+
+    }
+
     private boolean validateBalance() {
         if(GlobalInfo.listUsers.get(GlobalInfo.poss).balance<amount) {
             return false;
@@ -90,8 +134,21 @@ public class PaysActivity extends AppCompatActivity {
 
         return true;
     }
+
+    private void savePay() {
+
+        GlobalInfo.payGlobal.setTypeInvoice(typeInvoice);
+        GlobalInfo.payGlobal.setNumberInvoice(numberInvoice);
+        GlobalInfo.payGlobal.setPaidValue(amountStr);
+    }
+
     private void goToPopCancelPayment() {
         Intent intent = new Intent(PaysActivity.this, PopCancelPayment.class);
+        startActivity(intent);
+    }
+
+    private void goToPopDetails() {
+        Intent intent = new Intent(PaysActivity.this, PopDetails.class);
         startActivity(intent);
     }
 
@@ -99,6 +156,11 @@ public class PaysActivity extends AppCompatActivity {
     public void onBackPressed() {
 
 
+    }
+
+    private void setBalanceAfterPay() {
+        int newBalance= GlobalInfo.listUsers.get(GlobalInfo.poss).balance-amount;
+        GlobalInfo.listUsers.get(GlobalInfo.poss).balance=newBalance;
     }
 
 

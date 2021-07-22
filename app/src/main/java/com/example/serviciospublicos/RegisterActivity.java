@@ -84,6 +84,7 @@ public class RegisterActivity extends AppCompatActivity {
             onCreateRunned = false;
 
             } else {
+            GlobalInfo.userGlobal.setBalance(GlobalInfo.globalAmountDeposit);
             GlobalInfo.listUsers.add(GlobalInfo.userGlobal);
             Toast.makeText(RegisterActivity.this, R.string.registerSuccesfull, Toast.LENGTH_SHORT).show();
             finish();

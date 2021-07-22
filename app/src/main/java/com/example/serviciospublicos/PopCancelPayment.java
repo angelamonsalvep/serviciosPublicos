@@ -71,10 +71,16 @@ public class PopCancelPayment extends AppCompatActivity {
             onCreateRunned = false;
 
         } else {
-            int newBalance= GlobalInfo.listUsers.get(GlobalInfo.poss).balance+GlobalInfo.userGlobal.balance;
-            GlobalInfo.listUsers.get(GlobalInfo.poss).balance=newBalance;
+            addAmounttoBalance();
             finish();
         }
+    }
+
+    private void addAmounttoBalance() {
+        int currentBalance= GlobalInfo.listUsers.get(GlobalInfo.poss).balance;
+        int amountDeposit= GlobalInfo.globalAmountDeposit;
+        int newBalance= currentBalance+amountDeposit;
+        GlobalInfo.listUsers.get(GlobalInfo.poss).balance=newBalance;
     }
 
 
